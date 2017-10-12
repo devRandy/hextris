@@ -79,7 +79,7 @@ function addKeyListeners() {
 		return false;
 	});
 
-	$("#colorBlindBtn").on('touchstart mousedown', function() {
+	$("#colorblindCheck").on('touchstart mousedown', function() {
 	window.colors = ["#8e44ad", "#f1c40f", "#3498db", "#d35400"];
 
 	window.hexColorsToTintedColors = {
@@ -102,6 +102,20 @@ function addKeyListeners() {
 		"rgb(52,152,219)": "rgb(151,201,235)",
 		"rgb(46,204,113)": "rgb(210,180,222)"
 	};
+
+	if (gameState==1 || importing == 1) {
+		init(1);
+	}
+	if (gameState == 2) {
+		init();
+		$("#gameoverscreen").fadeOut();
+	}
+	if (gameState == 0) {
+		init(1);
+	}
+	if (gameState == -1) {
+		init(1);
+	}
 	});
 
 
